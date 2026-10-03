@@ -3,81 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STATUS PROJECT INC. | Boston, Massachusetts</title>
-<meta name="description" content="STATUS PROJECT INC. supports individuals and families facing housing instability, health barriers, and social inequities in Greater Boston.">
+<title>STATUS PROJECT INC. | Boston</title>
+<meta name="description" content="STATUS PROJECT INC. connects people across Boston with pathways to housing, health, recovery, safety, stability and opportunity.">
+
 <style>
+:root{
+  --navy:#0b2438;
+  --navy2:#102f46;
+  --terracotta:#c46f55;
+  --petrol:#356773;
+  --sand:#e7d9c9;
+  --ivory:#f7f4ef;
+  --white:#ffffff;
+  --ink:#17252d;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;color:#17202a;background:#fff;line-height:1.6}
-header{background:#102a43;color:#fff;padding:20px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo{font-size:25px;font-weight:700;letter-spacing:1px}
-nav a{color:#fff;text-decoration:none;margin-left:24px;font-size:15px}
-.hero{background:linear-gradient(135deg,#102a43,#1f5f78);color:#fff;padding:100px 8%}
-.hero h1{font-size:48px;max-width:800px;line-height:1.15;margin-bottom:20px}
-.hero p{font-size:20px;max-width:760px;color:#e8f1f5}
-.btn{display:inline-block;margin-top:30px;background:#fff;color:#102a43;padding:13px 24px;border-radius:5px;text-decoration:none;font-weight:700}
-section{padding:70px 8%}
-section h2{font-size:32px;color:#102a43;margin-bottom:20px}
-.intro{max-width:900px;font-size:18px}
-.services{background:#f4f7f9}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:30px}
-.card{background:#fff;padding:28px;border-radius:8px;border:1px solid #dde5ea}
-.card h3{color:#1f5f78;margin-bottom:10px}
-.community{background:#102a43;color:#fff}
-.community h2{color:#fff}
-.contact a{color:#1f5f78;font-weight:700}
-footer{background:#091c2c;color:#cbd5dc;padding:28px 8%;font-size:14px}
-@media(max-width:700px){.hero h1{font-size:36px}nav{margin-top:15px}nav a{margin:0 15px 0 0}}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--ivory);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1180px,88%);margin:auto}
+
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,36,56,.97);
+  color:white;border-bottom:1px solid rgba(255,255,255,.12)
+}
+.nav{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;gap:14px}
+.mark{width:44px;height:44px;position:relative}
+.mark span{position:absolute;border:5px solid var(--terracotta);width:28px;height:36px;transform:skewY(-25deg)}
+.mark span:nth-child(2){border-color:var(--petrol);left:13px;top:5px}
+.brand strong{font-size:18px;letter-spacing:2px}
+.brand small{display:block;color:var(--sand);font-size:10px;letter-spacing:2px}
+nav{display:flex;gap:25px;align-items:center}
+nav a{font-size:13px;letter-spacing:.5px;color:#edf3f4}
+nav a:hover{color:var(--sand)}
+
+.hero{
+  min-height:720px;
+  color:white;
+  background:
+  radial-gradient(circle at 82% 45%,rgba(196,111,85,.25),transparent 24%),
+  linear-gradient(120deg,var(--navy) 0%,#113b52 65%,#255c67 100%);
+  position:relative;overflow:hidden
+}
+.hero:after{
+  content:"";position:absolute;width:560px;height:560px;
+  border:80px solid rgba(255,255,255,.035);
+  right:-140px;top:80px;transform:rotate(38deg)
+}
+.hero-grid{
+  min-height:720px;display:grid;grid-template-columns:1.3fr .7fr;
+  align-items:center;gap:60px;position:relative;z-index:2
+}
+.eyebrow{color:var(--sand);font-size:12px;font-weight:bold;letter-spacing:3px;margin-bottom:25px}
+h1{font-size:clamp(52px,7vw,92px);line-height:.96;letter-spacing:-4px;max-width:850px}
+h1 span{color:var(--terracotta)}
+.hero p{font-size:19px;max-width:700px;color:#dce7e9;margin:30px 0}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 24px;border:1px solid white;font-weight:bold;font-size:13px;letter-spacing:.5px}
+.btn.primary{background:var(--terracotta);border-color:var(--terracotta)}
+.btn:hover{transform:translateY(-2px)}
+.hero-side{border-left:1px solid rgba(255,255,255,.25);padding-left:40px}
+.hero-side p{font-size:12px;letter-spacing:3px;line-height:2.2;color:white}
+.hero-side strong{display:block;color:var(--sand);font-size:25px;letter-spacing:0;line-height:1.2;margin-bottom:25px}
+
+.pathbar{background:var(--terracotta);color:white}
+.pathbar .wrap{display:grid;grid-template-columns:repeat(6,1fr)}
+.pathbar div{padding:21px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.25);font-size:11px;font-weight:bold;letter-spacing:1px}
+
+section{padding:105px 0}
+.kicker{color:var(--terracotta);font-weight:bold;letter-spacing:3px;font-size:11px;text-transform:uppercase}
+h2{font-size:clamp(38px,5vw,62px);line-height:1.05;letter-spacing:-2px;margin:15px 0 28px;color:var(--navy)}
+.lead{font-size:20px;max-width:790px;color:#50616a}
+
+.intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
+.big-number{font-size:110px;line-height:.8;color:var(--terracotta);font-weight:bold}
+.statement{font-size:28px;line-height:1.35;color:var(--navy);font-weight:bold}
+
+.services{background:white}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:55px;border-top:1px solid #d8dddf;border-left:1px solid #d8dddf}
+.card{padding:42px 34px;min-height:280px;border-right:1px solid #d8dddf;border-bottom:1px solid #d8dddf;transition:.25s}
+.card:hover{background:var(--navy);color:white}
+.card:hover h3,.card:hover .num{color:white}
+.num{font-size:12px;color:var(--terracotta);font-weight:bold;letter-spacing:2px}
+.card h3{font-size:24px;color:var(--navy);margin:30px 0 15px}
+.card p{font-size:15px}
+
+.system{background:var(--navy);color:white}
+.system h2{color:white}
+.system .lead{color:#c8d7dc}
+.pathway{margin-top:60px;display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.node{border-top:4px solid var(--terracotta);padding:25px 12px;background:rgba(255,255,255,.05);min-height:145px}
+.node span{font-size:10px;color:var(--sand);letter-spacing:2px}
+.node strong{display:block;margin-top:25px;font-size:17px}
+
+.people-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{border:1px solid #bcc8cb;padding:12px 17px;font-size:13px;background:white}
+
+.cta{background:var(--terracotta);color:white}
+.cta-grid{display:grid;grid-template-columns:1.3fr .7fr;align-items:end;gap:50px}
+.cta h2{color:white;margin-bottom:10px}
+.cta p{font-size:18px;max-width:700px}
+.cta .btn{float:right}
+
+footer{background:#071a29;color:#b9c8cd;padding:65px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px}
+footer h3{color:white;margin-bottom:15px}
+footer h4{color:var(--sand);font-size:11px;letter-spacing:2px;margin-bottom:15px}
+footer p,footer a{font-size:13px}
+.legal{border-top:1px solid #244052;margin-top:50px;padding-top:25px;font-size:11px;display:flex;justify-content:space-between}
+
+@media(max-width:850px){
+ nav{display:none}
+ .hero-grid,.intro-grid,.people-grid,.cta-grid,.footer-grid{grid-template-columns:1fr}
+ .hero-side{display:none}
+ .service-grid{grid-template-columns:1fr}
+ .pathway{grid-template-columns:repeat(2,1fr)}
+ .pathbar .wrap{grid-template-columns:repeat(2,1fr)}
+ h1{letter-spacing:-2px}
+ .hero,.hero-grid{min-height:650px}
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">STATUS PROJECT INC.</div>
-<nav>
-<a href="#about">About</a>
-<a href="#services">Our Focus</a>
-<a href="#community">Community</a>
-<a href="#contact">Contact</a>
-</nav>
+<div class="wrap nav">
+  <a class="brand" href="#home">
+    <div class="mark"><span></span><span></span></div>
+    <div><strong>STATUS PROJECT</strong><small>PEOPLE · PATHWAYS · POSSIBILITIES</small></div>
+  </a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Our Services</a>
+    <a href="#people">Who We Serve</a>
+    <a href="#impact">Our Approach</a>
+    <a href="#contact">Connect</a>
+  </nav>
+</div>
 </header>
 
-<div class="hero">
-<h1>Building pathways toward stability, health and opportunity.</h1>
-<p>STATUS PROJECT INC. is a Boston-based community organization committed to helping people facing housing instability, health barriers and social inequities connect with resources and opportunities that strengthen their lives.</p>
-<a class="btn" href="#contact">Connect With Us</a>
+<main id="home">
+
+<section class="hero">
+<div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow">BOSTON · MASSACHUSETTS</div>
+    <h1>Connecting today.<br><span>Building tomorrow.</span></h1>
+    <p>STATUS PROJECT INC. connects people with pathways to housing, health, recovery, safety, stability and opportunity — bringing fragmented systems together around the person.</p>
+    <div class="actions">
+      <a class="btn primary" href="#services">Explore Our Services</a>
+      <a class="btn" href="#contact">Connect With Us</a>
+    </div>
+  </div>
+  <div class="hero-side">
+    <strong>Access should lead somewhere.</strong>
+    <p>ACCESS<br>CONNECTION<br>STABILITY<br>INCLUSION<br>PROGRESS<br>OPPORTUNITY</p>
+  </div>
+</div>
+</section>
+
+<div class="pathbar">
+<div class="wrap">
+  <div>HOUSING</div>
+  <div>HEALTH</div>
+  <div>RECOVERY</div>
+  <div>SAFETY</div>
+  <div>OPPORTUNITY</div>
+  <div>STABILITY</div>
+</div>
 </div>
 
 <section id="about">
-<h2>About STATUS PROJECT</h2>
-<p class="intro">Our work is centered on people and communities experiencing barriers to stability and opportunity. We seek to strengthen access to housing resources, health and wellness support, benefits navigation, community services and other resources that help individuals move toward greater stability and independence.</p>
-</section>
-
-<section class="services" id="services">
-<h2>Our Areas of Focus</h2>
-<div class="grid">
-<div class="card"><h3>Housing Stability</h3><p>Connecting individuals and families with housing resources, stabilization support and community-based assistance.</p></div>
-<div class="card"><h3>Health & Wellness</h3><p>Supporting navigation of health, behavioral health and community wellness resources.</p></div>
-<div class="card"><h3>Benefits Navigation</h3><p>Helping community members identify and navigate available public and community resources.</p></div>
-<div class="card"><h3>Community Support</h3><p>Connecting people experiencing barriers with organizations, programs and services that can help address their needs.</p></div>
+<div class="wrap intro-grid">
+  <div>
+    <div class="kicker">Our Purpose</div>
+    <div class="big-number">01</div>
+  </div>
+  <div>
+    <h2>People do not live in separate systems.</h2>
+    <p class="statement">Housing, health, recovery, safety and economic stability are interconnected. Our work is designed around that reality.</p>
+    <br>
+    <p class="lead">STATUS PROJECT INC. is a Boston-based community organization working with people navigating multiple barriers at the same time. We create connections across services and opportunities so that a person can move from crisis toward greater stability.</p>
+  </div>
 </div>
 </section>
 
-<section class="community" id="community">
-<h2>Everyone Deserves a Path Forward</h2>
-<p class="intro">STATUS PROJECT INC. works from a commitment to dignity, inclusion and equitable access. Our community focus includes people experiencing homelessness or housing instability and individuals and families navigating complex health, economic and social challenges.</p>
+<section class="services" id="services">
+<div class="wrap">
+  <div class="kicker">Integrated Support</div>
+  <h2>Multiple needs.<br>One connected pathway.</h2>
+  <p class="lead">Our model brings together the areas that most directly affect stability, health and opportunity.</p>
+
+  <div class="service-grid">
+    <article class="card">
+      <div class="num">01 / HOUSING</div>
+      <h3>Housing Stability</h3>
+      <p>Navigation and support focused on housing access, housing stability, homelessness and connections to available housing resources.</p>
+    </article>
+    <article class="card">
+      <div class="num">02 / HEALTH</div>
+      <h3>Health & Public Health</h3>
+      <p>Connections to healthcare, HIV and hepatitis resources, prevention, education and community-based health support.</p>
+    </article>
+    <article class="card">
+      <div class="num">03 / RECOVERY</div>
+      <h3>Behavioral Health & Recovery</h3>
+      <p>Navigation and community support for people affected by mental health challenges and substance use disorders.</p>
+    </article>
+    <article class="card">
+      <div class="num">04 / COMMUNITY</div>
+      <h3>Community Navigation</h3>
+      <p>Help understanding systems, identifying resources, coordinating services and creating practical next steps.</p>
+    </article>
+    <article class="card">
+      <div class="num">05 / SAFETY</div>
+      <h3>Safety & Reintegration</h3>
+      <p>Connections for people navigating violence, reentry, displacement and other circumstances that create barriers to stability.</p>
+    </article>
+    <article class="card">
+      <div class="num">06 / OPPORTUNITY</div>
+      <h3>Benefits & Economic Stability</h3>
+      <p>Navigation toward benefits, community resources and opportunities that can strengthen long-term stability and independence.</p>
+    </article>
+  </div>
+</div>
 </section>
 
-<section class="contact" id="contact">
-<h2>Contact STATUS PROJECT</h2>
-<p>For organizational inquiries, community partnerships and information:</p>
-<p style="margin-top:15px"><a href="mailto:statusprojectboston@gmail.com">statusprojectboston@gmail.com</a></p>
-<p>Boston, Massachusetts</p>
+<section class="system" id="impact">
+<div class="wrap">
+  <div class="kicker">The STATUS PROJECT Model</div>
+  <h2>A pathway, not another disconnected door.</h2>
+  <p class="lead">We approach services as connected parts of a person's life rather than isolated problems.</p>
+
+  <div class="pathway">
+    <div class="node"><span>01</span><strong>Access</strong></div>
+    <div class="node"><span>02</span><strong>Listen</strong></div>
+    <div class="node"><span>03</span><strong>Navigate</strong></div>
+    <div class="node"><span>04</span><strong>Connect</strong></div>
+    <div class="node"><span>05</span><strong>Stabilize</strong></div>
+    <div class="node"><span>06</span><strong>Move Forward</strong></div>
+  </div>
+</div>
 </section>
+
+<section id="people">
+<div class="wrap people-grid">
+  <div>
+    <div class="kicker">Who We Serve</div>
+    <h2>Built for people navigating barriers.</h2>
+    <p class="lead">STATUS PROJECT serves the broader community with particular attention to people and communities experiencing marginalization, instability or barriers to traditional systems.</p>
+  </div>
+  <div class="tags">
+    <span class="tag">People experiencing homelessness</span>
+    <span class="tag">People facing housing instability</span>
+    <span class="tag">People affected by substance use</span>
+    <span class="tag">People navigating mental health barriers</span>
+    <span class="tag">People living with or affected by HIV</span>
+    <span class="tag">LGBTQ+ communities</span>
+    <span class="tag">Immigrants</span>
+    <span class="tag">Latino communities</span>
+    <span class="tag">Black communities</span>
+    <span class="tag">People returning from incarceration</span>
+    <span class="tag">Survivors of violence</span>
+    <span class="tag">Other underserved communities</span>
+  </div>
+</div>
+</section>
+
+<section class="cta" id="contact">
+<div class="wrap cta-grid">
+  <div>
+    <div class="kicker" style="color:#fff">People · Pathways · Possibilities</div>
+    <h2>Start with a connection.</h2>
+    <p>Whether you are seeking support, referring someone, exploring a partnership or looking for ways to strengthen community access, STATUS PROJECT is building pathways forward.</p>
+  </div>
+  <div>
+    <a class="btn" href="mailto:statusproject@gmail.com">Contact STATUS PROJECT</a>
+  </div>
+</div>
+</section>
+
+</main>
 
 <footer>
-<strong>STATUS PROJECT INC.</strong><br>
-Boston, Massachusetts<br><br>
-© 2026 STATUS PROJECT INC. All rights reserved.
+<div class="wrap">
+  <div class="footer-grid">
+    <div>
+      <h3>STATUS PROJECT INC.</h3>
+      <p>Boston, Massachusetts</p>
+      <p>PEOPLE · PATHWAYS · POSSIBILITIES</p>
+    </div>
+    <div>
+      <h4>CONNECT</h4>
+      <p><a href="mailto:statusproject@gmail.com">statusproject@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>OUR FOCUS</h4>
+      <p>Housing · Health · Recovery<br>Safety · Stability · Opportunity</p>
+    </div>
+  </div>
+
+  <div class="legal">
+    <span>© 2026 STATUS PROJECT INC.</span>
+    <span>Boston, Massachusetts</span>
+  </div>
+</div>
 </footer>
 
 </body>
