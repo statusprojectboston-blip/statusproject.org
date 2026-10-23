@@ -284,6 +284,64 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); letter-spacing: -0.02em; }
 
 .site-nav a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--orange); }
 
+.platinum-banner {
+  background:
+    linear-gradient(105deg, rgba(247, 75, 16, 0.14), transparent 46%),
+    var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 1.15rem 0 1.25rem;
+}
+
+.platinum-banner-inner {
+  width: min(1240px, calc(100% - 2.4rem));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem 1.4rem;
+  align-items: center;
+}
+
+.platinum-banner img {
+  width: 110px;
+  height: 110px;
+}
+
+.platinum-banner .platinum-title {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.6vw, 2.15rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  color: var(--navy);
+  max-width: 22ch;
+}
+
+.platinum-banner p {
+  margin: 0.4rem 0 0;
+  max-width: 42rem;
+  color: var(--muted);
+}
+
+.platinum-banner .eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--teal);
+}
+
+.platinum-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.95rem;
+}
+
+.card-feature {
+  grid-column: 1 / -1;
+  background:
+    linear-gradient(100deg, rgba(247, 75, 16, 0.1), transparent 42%),
+    var(--white);
+  border-color: var(--orange);
+}
+
 .hero {
   background:
     radial-gradient(900px 420px at 90% -10%, rgba(77, 113, 133, 0.35), transparent 60%),
@@ -933,6 +991,8 @@ a.card:hover {
 
 @media (max-width: 760px) {
   .brand img { height: 54px; }
+  .platinum-banner-inner { grid-template-columns: 1fr; }
+  .platinum-actions .btn { flex: 1 1 180px; }
   .hero-inner,
   .section-head,
   .split,
