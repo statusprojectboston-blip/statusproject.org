@@ -770,7 +770,8 @@ a.card:hover {
 .prose { max-width: 68ch; }
 .prose p { margin: 0 0 1rem; }
 .prose h2 { margin: 2.1rem 0 0.7rem; font-size: clamp(1.45rem, 2vw, 1.9rem); }
-.prose ul { margin: 0 0 1rem; padding-left: 1.15rem; }
+.prose ul,
+.prose ol { margin: 0 0 1rem; padding-left: 1.15rem; }
 .prose li { margin: 0.35rem 0; }
 .prose li::marker { color: var(--orange); }
 
@@ -906,6 +907,14 @@ a.card:hover {
   font-size: 0.85rem;
   color: #d5c9bd;
 }
+
+.site-footer .legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.site-footer .legal a:hover { color: #ffb089; }
 
 .candid-seal { margin-top: 1rem; }
 

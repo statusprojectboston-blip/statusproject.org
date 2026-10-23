@@ -27,13 +27,20 @@ document.documentElement.classList.add("js");
     </p>
   </div>
 </main>
+<footer class="site-footer">
+  <div class="wrap legal">
+    <div><a id="legal-link" href="https://statusprojectboston-blip.github.io/statusproject.org/legal/">© 2026 Status Project Inc. All rights reserved.</a></div>
+  </div>
+</footer>
 <script>
 (function () {
   var base = document.documentElement.dataset.base || "/";
   var home = document.getElementById("home-link");
   var board = document.getElementById("board-link");
+  var legal = document.getElementById("legal-link");
   if (home) home.href = base;
   if (board) board.href = base + "board/";
+  if (legal) legal.href = base + "legal/";
 })();
 </script>
 </body>
