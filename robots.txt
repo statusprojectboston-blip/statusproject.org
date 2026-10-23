@@ -1,0 +1,7 @@
+# Canonical host is the GitHub Pages project URL until statusproject.org is connected.
+# Then point Sitemap at https://statusproject.org/sitemap.xml and update canonical
+# and og:url values in each page (search for statusprojectboston-blip.github.io).
+User-agent: *
+Allow: /
+
+Sitemap: https://statusprojectboston-blip.github.io/statusproject.org/sitemap.xml

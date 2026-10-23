@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | Status Project</title>
+<meta name="robots" content="noindex">
+<script>
+document.documentElement.classList.add("js");
+(function () {
+  var onProject = location.hostname.endsWith("github.io") && location.pathname.indexOf("/statusproject.org") === 0;
+  var base = onProject ? "/statusproject.org/" : "/";
+  document.write('<link rel="stylesheet" href="' + base + 'assets/css/site.css">');
+  document.documentElement.dataset.base = base;
+})();
+</script>
+</head>
+<body>
+<main id="main" class="page-hero" style="min-height:70vh">
+  <div class="wrap">
+    <p class="eyebrow">404</p>
+    <h1>This page is not on the path.</h1>
+    <p class="lede">The link may be old, or the address may be mistyped.</p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" id="home-link" href="https://statusprojectboston-blip.github.io/statusproject.org/">Back to Status Project</a>
+      <a class="btn btn-ghost" id="board-link" href="https://statusprojectboston-blip.github.io/statusproject.org/board/">2026 Board</a>
+    </p>
+  </div>
+</main>
+<script>
+(function () {
+  var base = document.documentElement.dataset.base || "/";
+  var home = document.getElementById("home-link");
+  var board = document.getElementById("board-link");
+  if (home) home.href = base;
+  if (board) board.href = base + "board/";
+})();
+</script>
+</body>
+</html>
