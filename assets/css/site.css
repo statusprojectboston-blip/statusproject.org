@@ -327,6 +327,38 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); letter-spacing: -0.02em; }
   color: var(--teal);
 }
 
+.platinum-banner-inner:has(.reel-home) { grid-template-columns: auto minmax(0, 1fr) minmax(0, 300px); }
+
+.reel-card { margin: 0; }
+
+.reel-card video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--navy);
+  border-radius: 10px;
+}
+
+.reel-home video { aspect-ratio: 9 / 16; max-height: 70vh; }
+
+.reel-donate video { aspect-ratio: 4 / 5; }
+
+.platinum-banner .reel-card figcaption,
+.reel-card figcaption {
+  margin-top: 0.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+.reel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
 .platinum-actions {
   display: flex;
   flex-wrap: wrap;
@@ -991,7 +1023,11 @@ a.card:hover {
 
 @media (max-width: 760px) {
   .brand img { height: 54px; }
-  .platinum-banner-inner { grid-template-columns: 1fr; }
+  .platinum-banner-inner,
+  .platinum-banner-inner:has(.reel-home) { grid-template-columns: 1fr; }
+  .reel-home { max-width: 420px; width: 100%; justify-self: center; }
+  .reel-home video { max-height: none; }
+  .reel-actions .btn { flex: 1 1 160px; }
   .platinum-actions .btn { flex: 1 1 180px; }
   .hero-inner,
   .section-head,
