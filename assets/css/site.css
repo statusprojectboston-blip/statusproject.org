@@ -632,7 +632,6 @@ a.card:hover {
   object-fit: cover;
 }
 
-.pos-cesar { object-position: center 15%; }
 .pos-liz { object-position: center 18%; }
 .pos-elizabeth { object-position: center 12%; }
 .pos-cristian { object-position: center center; }
@@ -744,6 +743,23 @@ a.card:hover {
   object-fit: cover;
   border: 6px solid #f3ece3;
   box-shadow: 12px 12px 0 var(--orange);
+}
+
+/* This portrait is nearly square and the crown is on the top edge of the file.
+   Show the whole photograph and keep a margin above the head inside the frame. */
+img.pos-cesar {
+  aspect-ratio: 1 / 1.1;
+  object-fit: contain;
+  object-position: center bottom;
+  background-color: #f3ece3;
+}
+
+/* Card grid stays full-bleed and the same height as the other portraits. */
+.person-card img.pos-cesar {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  background-color: transparent;
 }
 
 .profile-intro .role {
@@ -1050,7 +1066,7 @@ a.card:hover {
   .fact-row div { border-left: 0; border-top: 1px solid rgba(250, 247, 242, 0.08); }
   .fact-row div:first-child { border-top: 0; }
   .hero h1 { max-width: none; }
-  .hero-figure img { aspect-ratio: 1 / 1; max-height: 460px; }
+  .hero-figure img { max-height: 520px; }
   .page-hero h1 { max-width: none; }
   .btn { width: auto; }
   .hero-actions .btn,
